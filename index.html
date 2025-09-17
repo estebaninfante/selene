@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto A-MARTE: El Camino de la Afectividad</title>
+    <title>Selene</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,7 @@
         }
         html {
             scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
         }
         .full-screen-section {
             min-height: 100vh;
@@ -33,6 +34,7 @@
             padding: 4rem 1.5rem; /* 64px 24px */
             position: relative;
             overflow: hidden;
+            scroll-snap-align: start;
         }
         .carousel-item {
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -72,13 +74,20 @@
         <div class="particles" id="particle-container"></div>
         <div class="container mx-auto relative z-10">
             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white" style="text-shadow: 0 0 15px rgba(255,255,255,0.3), 0 0 25px rgba(244, 114, 182, 0.3);">
-                Proyecto A-MARTE
+                Selene
             </h1>
             <p class="mt-4 text-lg md:text-xl text-purple-200 max-w-3xl mx-auto">
                 Un juego de mesa para explorar el camino de la afectividad y las relaciones sanas.
             </p>
-            <p class="mt-2 text-md text-purple-300">Por: Grupo Selene</p>
-        </div>
+            <p class="mt-2 text-md text-purple-300">Por: Grupo Selene para el proyecto A-MARTE</p>
+            <ul>
+                <p class="mt-2 text-md text-purple-300">María Hurtado</p>
+                <p class="mt-2 text-md text-purple-300">Jacobo Barbosa</p>
+                <p class="mt-2 text-md text-purple-300">Andrés Reina</p>
+                <p class="mt-2 text-md text-purple-300">Esteban Infante</p>
+
+            </ul>
+            </div>
     </header>
 
     <main>
@@ -209,7 +218,7 @@
             <h2 class="text-3xl font-bold text-center mb-10 pink-gradient-text">Visualiza el Tablero</h2>
             <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-lg w-full max-w-5xl">
                  <div class="flex justify-center">
-                    <img src="https://images.pexels.com/photos/4691417/pexels-photo-4691417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tablero del juego Proyecto A-MARTE" class="rounded-2xl shadow-lg max-w-full h-auto md:max-w-3xl">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_976116-MLA49220501482_022022-O.webp" alt="Tablero del juego Proyecto A-MARTE" class="rounded-2xl shadow-lg max-w-full h-auto md:max-w-3xl">
                 </div>
             </div>
         </section>
@@ -224,7 +233,7 @@
                 <div id="carousel-h1-viewport" class="w-full h-full relative overflow-hidden">
                     <div id="carousel-h1-track" class="absolute top-0 left-0 h-full flex items-center transition-transform duration-500 ease-in-out">
                         <!-- Carta 1 -->
-                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                        <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-indigo-700 mb-3">CARTA 1: DIGNIDAD</h3>
@@ -241,7 +250,7 @@
                             </div>
                         </div>
                         <!-- Carta 2 -->
-                         <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                         <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-indigo-700 mb-3">CARTA 2: LIBERTAD</h3>
@@ -258,7 +267,7 @@
                             </div>
                         </div>
                         <!-- Carta 3 -->
-                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                        <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-indigo-700 mb-3">CARTA 3: RESPONSABILIDAD</h3>
@@ -275,7 +284,7 @@
                             </div>
                         </div>
                         <!-- Carta 4 -->
-                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                        <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-indigo-700 mb-3">CARTA 4: FELICIDAD</h3>
@@ -311,7 +320,7 @@
                 <div id="carousel-h2-viewport" class="w-full h-full relative overflow-hidden">
                     <div id="carousel-h2-track" class="absolute top-0 left-0 h-full flex items-center transition-transform duration-500 ease-in-out">
                         <!-- Carta 1 -->
-                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                        <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-purple-700 mb-3">CARTA 1: ACEPTACIÓN</h3>
@@ -327,7 +336,7 @@
                             </div>
                         </div>
                         <!-- Carta 2 -->
-                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                        <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-purple-700 mb-3">CARTA 2: CONFIANZA</h3>
@@ -343,7 +352,7 @@
                             </div>
                         </div>
                         <!-- Carta 3 -->
-                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                        <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-purple-700 mb-3">CARTA 3: CUIDADO</h3>
@@ -359,7 +368,7 @@
                             </div>
                         </div>
                          <!-- Carta 4 -->
-                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                        <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-purple-700 mb-3">CARTA 4: PERSEVERANCIA</h3>
@@ -394,7 +403,7 @@
                 <div id="carousel-h3-viewport" class="w-full h-full relative overflow-hidden">
                     <div id="carousel-h3-track" class="absolute top-0 left-0 h-full flex items-center transition-transform duration-500 ease-in-out">
                         <!-- Carta 1 -->
-                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                        <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-teal-600 mb-3">PLAYLIST: ENAMORAMIENTO</h3>
@@ -413,7 +422,7 @@
                             </div>
                         </div>
                         <!-- Carta 2 -->
-                         <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                         <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-teal-600 mb-3">PLAYLIST: AFIANZAMIENTO</h3>
@@ -451,7 +460,7 @@
                 <div id="carousel-h4-viewport" class="w-full h-full relative overflow-hidden">
                     <div id="carousel-h4-track" class="absolute top-0 left-0 h-full flex items-center transition-transform duration-500 ease-in-out">
                         <!-- Carta 1 -->
-                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                        <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-orange-600 mb-3">DESAFÍO: CLARIDAD</h3>
@@ -481,7 +490,7 @@
                             </div>
                         </div>
                         <!-- Carta 2 -->
-                         <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                         <div class="carousel-item mx-2 w-[80vw] sm:w-[320px] h-[480px]">
                             <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
                                 <div class="p-6 flex-grow">
                                     <h3 class="text-xl font-bold text-orange-600 mb-3">DESAFÍO: CONFIANZA</h3>
@@ -524,7 +533,7 @@
     </main>
     
     <footer class="text-center py-8 bg-black/20 text-purple-200">
-        <p>&copy; 2024 Grupo Selene. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Grupo Selene. Todos los derechos reservados.</p>
     </footer>
 
     <script>
