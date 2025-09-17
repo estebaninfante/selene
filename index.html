@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto A-MARTE: El Camino de la Afectividad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .dark-purple-gradient {
+            background: linear-gradient(135deg, #1e0a3c 0%, #3d1a5c 50%, #5c2a7c 100%);
+        }
+        .pink-gradient-text {
+             background: linear-gradient(to right, #f9a8d4, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .full-screen-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 1.5rem; /* 64px 24px */
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-item {
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            transform: scale(0.85);
+            opacity: 0.6;
+        }
+        .carousel-item.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+        /* Particle background effect */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 25s infinite linear;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 0.2; }
+            50% { transform: translateY(-50vh) translateX(10vw); opacity: 0.5; }
+            100% { transform: translateY(-100vh) translateX(-10vw); opacity: 0.2; }
+        }
+    </style>
+</head>
+<body class="dark-purple-gradient text-slate-100">
+
+    <!-- Hero Section -->
+    <header class="full-screen-section text-center">
+        <div class="particles" id="particle-container"></div>
+        <div class="container mx-auto relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white" style="text-shadow: 0 0 15px rgba(255,255,255,0.3), 0 0 25px rgba(244, 114, 182, 0.3);">
+                Proyecto A-MARTE
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-purple-200 max-w-3xl mx-auto">
+                Un juego de mesa para explorar el camino de la afectividad y las relaciones sanas.
+            </p>
+            <p class="mt-2 text-md text-purple-300">Por: Grupo Selene</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Introducción y Concepto del Juego -->
+        <section id="introduccion" class="full-screen-section">
+            <div class="bg-slate-800/20 backdrop-blur-sm text-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto border border-white/20 shadow-[0_0_20px_rgba(244,114,182,0.3)]">
+                <h2 class="text-3xl font-bold text-center mb-6 pink-gradient-text">Introducción y Concepto del Juego</h2>
+                <div class="space-y-4 text-slate-200 text-lg leading-relaxed">
+                    <p><strong class="font-semibold text-white">Objetivo:</strong> Este juego de mesa es una herramienta interactiva para explorar los fundamentos de las relaciones sanas y la afectividad. El objetivo del jugador es avanzar a lo largo del tablero, tomando decisiones que le permitan construir una base sólida de amor a uno mismo y, en futuras fases, aplicar otras herramientas para las relaciones. El ganador es quien, al final del recorrido, tenga el puntaje más alto en su "Medidor de Afectividad".</p>
+                    <p><strong class="font-semibold text-white">Mecánica:</strong> Los jugadores avanzan por un camino de casillas, donde cada una representa una etapa en el desarrollo de su afectividad. El primer tramo se enfoca en el amor propio, usando la historia de Lina y Andrius como un ejemplo de cómo la dignidad, la libertad, la responsabilidad y la felicidad se cultivan incluso en las circunstancias más difíciles.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Componentes -->
+        <section id="componentes" class="full-screen-section">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-10 pink-gradient-text">Componentes del Juego</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Tablero -->
+                    <a href="#tablero-visual" class="block hover:scale-105 transition-transform duration-300">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-md text-center h-full">
+                            <div class="w-16 h-16 bg-purple-200 rounded-full mx-auto flex items-center justify-center mb-4">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-purple-800"><path d="M6 9l6-6 6 6"/><path d="M12 3v12"/><path d="M4 21h16"/></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-white">Tablero</h3>
+                            <p class="text-purple-200">Un camino lineal que marca las etapas del juego.</p>
+                        </div>
+                    </a>
+                    <!-- Fichas -->
+                    <a href="#fichas-jugador" class="block hover:scale-105 transition-transform duration-300">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-md text-center h-full">
+                            <div class="w-16 h-16 bg-purple-200 rounded-full mx-auto flex items-center justify-center mb-4">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-purple-800"><path d="M12 2a5 5 0 0 0-5 5c0 1.66 1.34 3 3 3h4c1.66 0 3-1.34 3-3a5 5 0 0 0-5-5z"/><path d="M12 12c-2.21 0-4 1.79-4 4v2h8v-2c0-2.21-1.79-4-4-4z"/></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-white">Fichas de Jugador</h3>
+                            <p class="text-purple-200">Representan a cada jugador en su camino.</p>
+                        </div>
+                    </a>
+                    <!-- Medidor -->
+                     <a href="#medidor-afectividad" class="block hover:scale-105 transition-transform duration-300">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-md text-center h-full">
+                            <div class="w-16 h-16 bg-purple-200 rounded-full mx-auto flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-purple-800"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.77-.77-.77a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-white">Medidor de Afectividad</h3>
+                            <p class="text-purple-200">Mide el bienestar emocional de los jugadores.</p>
+                        </div>
+                    </a>
+                    <!-- Mazo de Cartas -->
+                    <a href="#herramienta1" class="block hover:scale-105 transition-transform duration-300">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-md text-center h-full">
+                            <div class="w-16 h-16 bg-purple-200 rounded-full mx-auto flex items-center justify-center mb-4">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-purple-800"><path d="M20 12V8a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2v-4"/><path d="M16 6h2a2 2 0 0 1 2 2v2"/><path d="M12 12v.01"/></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-white">Mazo de Cartas</h3>
+                            <p class="text-purple-200">Dilemas y "Estudios de Caso" para cada herramienta.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Fichas de Jugador -->
+        <section id="fichas-jugador" class="full-screen-section">
+            <h2 class="text-3xl font-bold text-center mb-10 pink-gradient-text">Fichas de Jugador</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
+                <!-- Ficha 1 -->
+                <div class="flex flex-col items-center space-y-3">
+                     <div class="w-24 h-24 rounded-full bg-blue-400 flex items-center justify-center text-white shadow-lg" style="box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), inset 0 4px 6px -1px rgba(255, 255, 255, 0.4);"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5c0 1.66 1.34 3 3 3h4c1.66 0 3-1.34 3-3a5 5 0 0 0-5-5z"/><path d="M12 12c-2.21 0-4 1.79-4 4v2h8v-2c0-2.21-1.79-4-4-4z"/></svg></div>
+                     <p class="font-semibold text-lg">Jugador 1</p>
+                </div>
+                 <!-- Ficha 2 -->
+                <div class="flex flex-col items-center space-y-3">
+                     <div class="w-24 h-24 rounded-full bg-pink-400 flex items-center justify-center text-white shadow-lg" style="box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), inset 0 4px 6px -1px rgba(255, 255, 255, 0.4);"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5c0 1.66 1.34 3 3 3h4c1.66 0 3-1.34 3-3a5 5 0 0 0-5-5z"/><path d="M12 12c-2.21 0-4 1.79-4 4v2h8v-2c0-2.21-1.79-4-4-4z"/></svg></div>
+                     <p class="font-semibold text-lg">Jugador 2</p>
+                </div>
+                 <!-- Ficha 3 -->
+                <div class="flex flex-col items-center space-y-3">
+                     <div class="w-24 h-24 rounded-full bg-green-400 flex items-center justify-center text-white shadow-lg" style="box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), inset 0 4px 6px -1px rgba(255, 255, 255, 0.4);"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5c0 1.66 1.34 3 3 3h4c1.66 0 3-1.34 3-3a5 5 0 0 0-5-5z"/><path d="M12 12c-2.21 0-4 1.79-4 4v2h8v-2c0-2.21-1.79-4-4-4z"/></svg></div>
+                     <p class="font-semibold text-lg">Jugador 3</p>
+                </div>
+                 <!-- Ficha 4 -->
+                <div class="flex flex-col items-center space-y-3">
+                     <div class="w-24 h-24 rounded-full bg-yellow-400 flex items-center justify-center text-white shadow-lg" style="box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), inset 0 4px 6px -1px rgba(255, 255, 255, 0.4);"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5c0 1.66 1.34 3 3 3h4c1.66 0 3-1.34 3-3a5 5 0 0 0-5-5z"/><path d="M12 12c-2.21 0-4 1.79-4 4v2h8v-2c0-2.21-1.79-4-4-4z"/></svg></div>
+                     <p class="font-semibold text-lg">Jugador 4</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medidor de Afectividad -->
+        <section id="medidor-afectividad" class="full-screen-section">
+            <h2 class="text-3xl font-bold text-center mb-10 pink-gradient-text">Medidor de Afectividad</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                 <!-- Medidor 1 -->
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="relative w-48 h-48">
+                        <svg class="w-full h-full" viewBox="0 0 36 36">
+                            <path class="text-slate-600" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+                            <path class="text-green-400" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="85, 100" stroke-linecap="round"></path>
+                        </svg>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                            <span class="text-4xl font-bold">85</span>
+                            <span class="text-sm block">puntos</span>
+                        </div>
+                    </div>
+                     <p class="font-semibold text-lg text-green-300">Relación Saludable</p>
+                </div>
+                 <!-- Medidor 2 -->
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="relative w-48 h-48">
+                        <svg class="w-full h-full" viewBox="0 0 36 36">
+                            <path class="text-slate-600" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+                            <path class="text-red-400" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="30, 100" stroke-linecap="round"></path>
+                        </svg>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                            <span class="text-4xl font-bold">30</span>
+                            <span class="text-sm block">puntos</span>
+                        </div>
+                    </div>
+                     <p class="font-semibold text-lg text-red-300">Necesita mejorar</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualiza el tablero -->
+        <section id="tablero-visual" class="full-screen-section">
+            <h2 class="text-3xl font-bold text-center mb-10 pink-gradient-text">Visualiza el Tablero</h2>
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-lg w-full max-w-5xl">
+                 <div class="flex justify-center">
+                    <img src="https://images.pexels.com/photos/4691417/pexels-photo-4691417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tablero del juego Proyecto A-MARTE" class="rounded-2xl shadow-lg max-w-full h-auto md:max-w-3xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Cartas: Herramienta 1 -->
+        <section id="herramienta1" class="full-screen-section w-full">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-white">Mazo de Cartas</h2>
+                <p class="text-xl font-semibold pink-gradient-text mt-1">Herramienta 1: Amor a uno mismo</p>
+            </div>
+            <div class="relative w-full h-[550px] flex items-center justify-center">
+                <div id="carousel-h1-viewport" class="w-full h-full relative overflow-hidden">
+                    <div id="carousel-h1-track" class="absolute top-0 left-0 h-full flex items-center transition-transform duration-500 ease-in-out">
+                        <!-- Carta 1 -->
+                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-indigo-700 mb-3">CARTA 1: DIGNIDAD</h3>
+                                    <p class="text-slate-600 mb-4 text-sm"><strong class="font-semibold text-slate-800">Situación:</strong> La madre de Lina, a pesar de ser humillada, mantiene la cabeza en alto y la compostura, protegiendo su dignidad.</p>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Pregunta: ¿Cómo responderías para proteger tu propia dignidad y la de tus seres queridos, aun cuando el costo sea alto?</p>
+                                    <div class="space-y-3">
+                                        <p class="bg-green-100 text-green-800 p-3 rounded-lg text-sm"><strong>Opción A:</strong> Te mantienes firme en tus principios. (+2 puntos)</p>
+                                        <p class="bg-red-100 text-red-800 p-3 rounded-lg text-sm"><strong>Opción B:</strong> Respondes con impulsividad. (-1 punto)</p>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">"La dignidad es el valor intrínseco de la persona, es innegociable."</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- Carta 2 -->
+                         <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-indigo-700 mb-3">CARTA 2: LIBERTAD</h3>
+                                    <p class="text-slate-600 mb-4 text-sm"><strong class="font-semibold text-slate-800">Situación:</strong> Lina descubre que, a pesar del cautiverio, su mente puede ser libre a través de su arte.</p>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Pregunta: ¿Cómo puedes encontrar la libertad interior cuando las circunstancias externas te oprimen?</p>
+                                    <div class="space-y-3">
+                                        <p class="bg-green-100 text-green-800 p-3 rounded-lg text-sm"><strong>Opción A:</strong> Te enfocas en un pasatiempo que te dé paz. (+2 puntos)</p>
+                                        <p class="bg-red-100 text-red-800 p-3 rounded-lg text-sm"><strong>Opción B:</strong> Te sumes en la tristeza. (-1 punto)</p>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">"Mi mente era libre. Podían hacer con mi cuerpo lo que quisieran, pero no con mi mente."</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- Carta 3 -->
+                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-indigo-700 mb-3">CARTA 3: RESPONSABILIDAD</h3>
+                                    <p class="text-slate-600 mb-4 text-sm"><strong class="font-semibold text-slate-800">Situación:</strong> Andrius se siente responsable por la pérdida del reloj de su padre, su última conexión con su familia.</p>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Pregunta: ¿Asumes la responsabilidad de tus errores, o culpas a otros?</p>
+                                    <div class="space-y-3">
+                                        <p class="bg-green-100 text-green-800 p-3 rounded-lg text-sm"><strong>Opción A:</strong> Aceptas tu error y buscas enmendarlo. (+2 puntos)</p>
+                                        <p class="bg-red-100 text-red-800 p-3 rounded-lg text-sm"><strong>Opción B:</strong> Mientes o culpas a otro para evitar una consecuencia. (-1 punto)</p>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">"La responsabilidad es la capacidad de responder por las propias acciones."</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- Carta 4 -->
+                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-indigo-700 mb-3">CARTA 4: FELICIDAD</h3>
+                                    <p class="text-slate-600 mb-4 text-sm"><strong class="font-semibold text-slate-800">Situación:</strong> En medio del sufrimiento, los personajes encuentran momentos de conexión humana que les dan fuerza.</p>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Pregunta: ¿Dónde encuentras la felicidad en medio de la adversidad?</p>
+                                    <div class="space-y-3">
+                                        <p class="bg-green-100 text-green-800 p-3 rounded-lg text-sm"><strong>Opción A:</strong> Buscas conexión con los demás. (+3 puntos)</p>
+                                        <p class="bg-red-100 text-red-800 p-3 rounded-lg text-sm"><strong>Opción B:</strong> Te aíslas del resto y te encierras en tu dolor. (-2 puntos)</p>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">"La felicidad no es un destino, es un proceso. Consiste en valorar los vínculos con los demás."</p>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="prev-h1" class="absolute left-4 sm:left-12 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center z-10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                 <button id="next-h1" class="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center z-10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Cartas: Herramienta 2 -->
+        <section id="herramienta2" class="full-screen-section w-full">
+            <div class="text-center mb-10">
+                <p class="text-xl font-semibold pink-gradient-text">Herramienta 2: Amar al otro</p>
+            </div>
+            <div class="relative w-full h-[550px] flex items-center justify-center">
+                <div id="carousel-h2-viewport" class="w-full h-full relative overflow-hidden">
+                    <div id="carousel-h2-track" class="absolute top-0 left-0 h-full flex items-center transition-transform duration-500 ease-in-out">
+                        <!-- Carta 1 -->
+                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-purple-700 mb-3">CARTA 1: ACEPTACIÓN</h3>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Pregunta: ¿Cómo reaccionarías si la persona que amas muestra una parte de sí que no conocías y que te incomoda?</p>
+                                    <div class="space-y-3">
+                                        <p class="bg-green-100 text-green-800 p-3 rounded-lg text-sm"><strong>Opción A:</strong> La aceptas con sus luces y sombras, intentando comprenderla. (+2 afectividad)</p>
+                                        <p class="bg-red-100 text-red-800 p-3 rounded-lg text-sm"><strong>Opción B:</strong> Te alejas porque no encaja con lo que esperabas. (-1 afectividad)</p>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">"Amar al otro es acogerlo entero, no solo en lo que me gusta."</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- Carta 2 -->
+                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                           <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-purple-700 mb-3">CARTA 2: CONFIANZA</h3>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Pregunta: ¿Qué haces cuando sientes miedo de abrirte en una relación?</p>
+                                    <div class="space-y-3">
+                                        <p class="bg-green-100 text-green-800 p-3 rounded-lg text-sm"><strong>Opción A:</strong> Reconoces tus temores, pero decides confiar y compartirlos. (+2 afectividad)</p>
+                                        <p class="bg-red-100 text-red-800 p-3 rounded-lg text-sm"><strong>Opción B:</strong> Prefieres callar para no arriesgarte. (-1 afectividad)</p>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">"La confianza es el puente que une dos libertades."</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- Carta 3 -->
+                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-purple-700 mb-3">CARTA 3: CUIDADO</h3>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Pregunta: ¿Cómo demuestras cuidado en la vida diaria hacia la persona que amas?</p>
+                                    <div class="space-y-3">
+                                        <p class="bg-green-100 text-green-800 p-3 rounded-lg text-sm"><strong>Opción A:</strong> Con pequeños gestos concretos (escuchar, ayudar, sorprender). (+3 afectividad)</p>
+                                        <p class="bg-red-100 text-red-800 p-3 rounded-lg text-sm"><strong>Opción B:</strong> Piensas que el amor no necesita demostraciones. (-2 afectividad)</p>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">"Amar es cuidar los detalles que sostienen el vínculo."</p>
+                                </footer>
+                            </div>
+                        </div>
+                         <!-- Carta 4 -->
+                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-purple-700 mb-3">CARTA 4: PERSEVERANCIA</h3>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Pregunta: ¿Qué harías si enfrentas un momento de crisis en tu relación?</p>
+                                    <div class="space-y-3">
+                                        <p class="bg-green-100 text-green-800 p-3 rounded-lg text-sm"><strong>Opción A:</strong> Te mantienes firme, buscando soluciones juntos. (+2 afectividad)</p>
+                                        <p class="bg-red-100 text-red-800 p-3 rounded-lg text-sm"><strong>Opción B:</strong> Crees que lo mejor es rendirse al primer obstáculo. (-1 afectividad)</p>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">"Amar es elegir cada día, incluso en la dificultad."</p>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="prev-h2" class="absolute left-4 sm:left-12 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center z-10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button id="next-h2" class="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center z-10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </section>
+        
+        <!-- Herramientas 3 -->
+        <section id="herramienta3" class="full-screen-section w-full">
+            <div class="text-center mb-10">
+                 <p class="text-xl font-semibold pink-gradient-text">Herramienta 3: La Playlist</p>
+            </div>
+            <div class="relative w-full h-[550px] flex items-center justify-center">
+                <div id="carousel-h3-viewport" class="w-full h-full relative overflow-hidden">
+                    <div id="carousel-h3-track" class="absolute top-0 left-0 h-full flex items-center transition-transform duration-500 ease-in-out">
+                        <!-- Carta 1 -->
+                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-teal-600 mb-3">PLAYLIST: ENAMORAMIENTO</h3>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Situación: Acaban de empezar su viaje juntos. ¿Qué canción captura la magia de este inicio?</p>
+                                    <div class="space-y-2 text-sm">
+                                        <p class="p-2 rounded-lg border border-slate-200">1. Corazón de Neón</p>
+                                        <p class="p-2 rounded-lg border border-slate-200">2. Ecos de Ayer</p>
+                                        <p class="p-2 rounded-lg border border-slate-200 bg-green-100 font-semibold">3. Nuestra Sinfonía</p>
+                                        <p class="p-2 rounded-lg border border-slate-200">4. Caminos Separados</p>
+                                        <p class="p-2 rounded-lg border border-slate-200 bg-green-100 font-semibold">5. Luz Fugaz</p>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">Pista: Busca las melodías que hablan de comienzos y promesas.</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- Carta 2 -->
+                         <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-teal-600 mb-3">PLAYLIST: AFIANZAMIENTO</h3>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Situación: Han superado obstáculos y su vínculo es fuerte. ¿Qué canción representa su fortaleza?</p>
+                                    <div class="space-y-2 text-sm">
+                                        <p class="p-2 rounded-lg border border-slate-200">1. Muros de Silencio</p>
+                                        <p class="p-2 rounded-lg border border-slate-200 bg-green-100 font-semibold">2. Nuestro Refugio</p>
+                                        <p class="p-2 rounded-lg border border-slate-200">3. Tormenta Pasajera</p>
+                                        <p class="p-2 rounded-lg border border-slate-200 bg-green-100 font-semibold">4. Ancla en la Marea</p>
+                                        <p class="p-2 rounded-lg border border-slate-200">5. Recuerdos Rotos</p>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">Pista: Elige las canciones que evocan seguridad y construcción.</p>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="prev-h3" class="absolute left-4 sm:left-12 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center z-10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                 <button id="next-h3" class="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center z-10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Herramientas 4 -->
+        <section id="herramienta4" class="full-screen-section w-full">
+            <div class="text-center mb-10">
+                <p class="text-xl font-semibold pink-gradient-text">Herramienta 4: ¿Amas Bien?</p>
+            </div>
+            <div class="relative w-full h-[550px] flex items-center justify-center">
+                <div id="carousel-h4-viewport" class="w-full h-full relative overflow-hidden">
+                    <div id="carousel-h4-track" class="absolute top-0 left-0 h-full flex items-center transition-transform duration-500 ease-in-out">
+                        <!-- Carta 1 -->
+                        <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-orange-600 mb-3">DESAFÍO: CLARIDAD</h3>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">¡Rápido! Tienes 1 minuto para clasificar estas acciones. ¿Cuáles son saludables y cuáles tóxicas?</p>
+                                    <div class="grid grid-cols-2 gap-x-4 text-sm">
+                                        <div>
+                                            <h4 class="font-bold text-green-600 mb-2">Saludable ✅</h4>
+                                            <ul class="space-y-1 list-disc list-inside">
+                                                <li>Escucha activa</li>
+                                                <li>Respetar espacios</li>
+                                                <li>Comunicación asertiva</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-red-600 mb-2">Tóxica ❌</h4>
+                                            <ul class="space-y-1 list-disc list-inside">
+                                                <li>Chantaje emocional</li>
+                                                <li>Gaslighting</li>
+                                                <li>Celos excesivos</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">Cada acierto suma, ¡cada error resta!</p>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- Carta 2 -->
+                         <div class="carousel-item mx-4 w-[320px] h-[480px]">
+                            <div class="bg-white text-slate-800 rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+                                <div class="p-6 flex-grow">
+                                    <h3 class="text-xl font-bold text-orange-600 mb-3">DESAFÍO: CONFIANZA</h3>
+                                    <p class="text-slate-800 font-semibold mb-4 text-sm">Segundo round: clasifica estas acciones para demostrar tu sabiduría en el amor.</p>
+                                    <div class="grid grid-cols-2 gap-x-4 text-sm">
+                                        <div>
+                                            <h4 class="font-bold text-green-600 mb-2">Saludable ✅</h4>
+                                            <ul class="space-y-1 list-disc list-inside">
+                                                <li>Apoyo incondicional</li>
+                                                <li>Validación emocional</li>
+                                                <li>Construir metas juntos</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-red-600 mb-2">Tóxica ❌</h4>
+                                            <ul class="space-y-1 list-disc list-inside">
+                                                <li>Controlar redes sociales</li>
+                                                <li>Mentiras piadosas</li>
+                                                <li>Honestidad "brutal"</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer class="bg-slate-100 px-6 py-4">
+                                    <p class="text-xs text-slate-500 italic">La confianza es la base, ¿sabes cómo construirla?</p>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="prev-h4" class="absolute left-4 sm:left-12 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center z-10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                 <button id="next-h4" class="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center z-10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </section>
+    
+    </main>
+    
+    <footer class="text-center py-8 bg-black/20 text-purple-200">
+        <p>&copy; 2024 Grupo Selene. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Particle effect script
+        document.addEventListener('DOMContentLoaded', () => {
+            const particleContainer = document.getElementById('particle-container');
+            if (particleContainer) {
+                const particleCount = 20;
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    const size = Math.random() * 5 + 1;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.top = `${Math.random() * 100}%`;
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.animationDelay = `${Math.random() * 25}s`;
+                    particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+                    particleContainer.appendChild(particle);
+                }
+            }
+
+            // Carousel setup
+            setupCarousel('carousel-h1-track', 'carousel-h1-viewport', 'prev-h1', 'next-h1');
+            setupCarousel('carousel-h2-track', 'carousel-h2-viewport', 'prev-h2', 'next-h2');
+            setupCarousel('carousel-h3-track', 'carousel-h3-viewport', 'prev-h3', 'next-h3');
+            setupCarousel('carousel-h4-track', 'carousel-h4-viewport', 'prev-h4', 'next-h4');
+        });
+
+        function setupCarousel(trackId, viewportId, prevBtnId, nextBtnId) {
+            const track = document.getElementById(trackId);
+            const viewport = document.getElementById(viewportId);
+            const prevBtn = document.getElementById(prevBtnId);
+            const nextBtn = document.getElementById(nextBtnId);
+            const items = track.querySelectorAll('.carousel-item');
+            
+            if (!track || !viewport || !prevBtn || !nextBtn || items.length === 0) {
+                console.error("Carousel elements not found for:", trackId);
+                return;
+            }
+
+            let currentIndex = 0;
+            const totalItems = items.length;
+
+            function updateCarousel() {
+                const activeCard = items[currentIndex];
+                const offset = viewport.offsetWidth / 2 - activeCard.offsetWidth / 2 - activeCard.offsetLeft;
+                track.style.transform = `translateX(${offset}px)`;
+
+                items.forEach((item, index) => {
+                    item.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
+                updateCarousel();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
+                updateCarousel();
+            });
+            
+             setTimeout(() => {
+                updateCarousel();
+             }, 100);
+
+            window.addEventListener('resize', updateCarousel);
+        }
+    </script>
+</body>
+</html>
+
